@@ -8,6 +8,29 @@ const fs = require('fs');
     // list of shapes (circle, triangle, square - multiple choice DO NOT USE LIST)
     // shape color (keyword or hexidecimal) (edge case for entering non-color? possibly use jest?)
 
-// generate content of the svg file 
+// generate content of the svg file
+    // generate svg tag
+    // generate svg shape
+    // generate text
+    // create one string with the above information
 
 // write the output file
+
+function createText(fillColor, text) {
+    // return string with HTML tag, fillColor and text included
+
+}
+
+const data = `
+<svg info>
+<shape info>
+<text info>
+</svg>`
+
+fs.writeFile("customSVGhw.svg", data, err => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("File created successfully");
+    }
+});
