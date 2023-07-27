@@ -44,29 +44,48 @@ const shapeQuestions = [
     }
 ]
 
-// generate content of the svg file
-    // generate svg tag
-    // generate svg shape
-    // generate text
-    // create one string with the above information
+// generate logo for the svg file
+function generateLogo({ text, textColor, shape, shapeColor }) {
+    // create new shape class based on user input
+    let newShape;
+    if (shape === 'Triangle') {
+        newShape = new Triangle(shapeColor, textColor, text);
+    } else if (shape === 'Circle') {
+        newShape = new Circle(shapeColor, textColor, text);
+    } else if (shape === 'Square') {
+        newShape = new Square(shapeColor, textColor, text);
+    }
+    // return the render method for the new shape class
+    return newShape.render();
+}
+
+// create a function to run the inquirer prompt
+function init() {
+    inquirer.prompt(shapeQuestions)
+        .then((response) => {
+            let newLogo = generateLogo(response.text, response.textColor, response.shape, response.shapeColor);
+            createOutputFile('./examples/customSVGhw.svg', newLogo, (err) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log('File created successfully');
+                }
+            });
+        });
+}
 
 // write the output file
 
-function createText(fillColor, text) {
-    // return string with HTML tag, fillColor and text included
-
+function createOutputFile(outputName, newLogo) {
+    fs.writeFile(outputName, newLogo, (err) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('File created successfully');
+        }
+    }
+    )
 }
 
-const data = `
-<svg info>
-<shape info>
-<text info>
-</svg>`
-
-fs.writeFile("customSVGhw.svg", data, err => {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log("File created successfully");
-    }
-});
+// call the init function
+init();
