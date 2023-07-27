@@ -1,5 +1,5 @@
 // import fs, inquirer and other npm packages
-
+const inquirer = require('inquirer');
 const fs = require('fs');
 
 // ask inquirer questions using prompt (must be run BEFORE generate content and write file - CANNOT PROGRESS UNTIL COMPLETION)
