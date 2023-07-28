@@ -38,13 +38,15 @@ Open up a Git Bash terminal window and navigate to the index.js file in the fold
 [Example Video](./assets/2023-07-25_16-43-02.mp4) (https://drive.google.com/drive/folders/10I01uJq1Vh2sfIo-QcjH_mYAfXwqlPUc?usp=sharing)
 
 ## Test
-There are no specific test instructions for this application.
+There are 3 tests to be performed using "npm run test" and the test scripts are as follows (line breaks are to allow for clarity in screenshot):
+
+[Test Scripts](./assets/images/Test%20Case%20Screenshot.png)
 
 ## License
-There is no license associated with this application.
+There is an MIT license associated with this application.
 
 ## Acknowledgements
-I would like to acknowledge and give shout out to Henry Weigand and Kyle Vance for leading informative pseudocode sessions which helped explain things in detail and helped give me a strong foundation and plan of attack for this homework assignment. I would also like to thank my fellow classmates, including but not limited to, Kayla Dutte, June Moon, Sonam Sherpa, Samuel Thomas, Jay Liu, Ross Fahan, Xioran Cai, Elena Gurchinskaia and Ross Fahan for either asking strong clarifying questions during the pseudocode sessions, or for helping me to work through errors that I was having with this assignment. 
+I would like to acknowledge and give shout out to Henry Weigand leading informative pseudocode sessions which helped explain things in detail and helped give me a strong foundation and plan of attack for this homework assignment. I would also like to thank my fellow classmates, including but not limited to, Kayla Dutte, June Moon, Sonam Sherpa, Samuel Thomas, Jay Liu, Xioran Cai, Elena Gurchinskaia and Ross Fahan for either asking strong clarifying questions during the pseudocode sessions, or for helping me to work through errors that I was having with this assignment. 
 
 ## Questions
 For questions, please contact me via GitHub: [mattschneble](https://github.com/mattschneble)
