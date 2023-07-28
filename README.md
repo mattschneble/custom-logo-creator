@@ -35,7 +35,7 @@ To install this application, clone down the GitHub repository, extract the zippe
 ## Usage
 Open up a Git Bash terminal window and navigate to the index.js file in the folder you previously determined. Enter "node index.js" and follow the onscreen prompts.
 
-[Example Video](./assets/2023-07-25_16-43-02.mp4) (https://drive.google.com/drive/folders/10I01uJq1Vh2sfIo-QcjH_mYAfXwqlPUc?usp=sharing)
+[Example Video](./assets/video/Video%20Walkthrough%20Assignment%2010.mp4) (https://drive.google.com/file/d/1BjgOwif_pMBAjsgBogib9Rc-B3TxXY4K/view?usp=sharing)
 
 ## Test
 There are 3 tests to be performed using "npm run test" and the test scripts are as follows (line breaks are to allow for clarity in screenshot):
