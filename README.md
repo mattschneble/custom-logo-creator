@@ -1,4 +1,4 @@
-# custom-logo-creator
+# Custom Logo Generator
 
 ## Table of Contents
 
