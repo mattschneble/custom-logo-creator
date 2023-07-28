@@ -4,13 +4,10 @@ const { Triangle, Circle, Square } = require('./lib/shapes');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// ask inquirer questions using prompt (must be run BEFORE generate content and write file - CANNOT PROGRESS UNTIL COMPLETION)
-    // what text characters do you want (up to 3) (edge case for more than 3?)
-    // text color (keyword or hexidecimal) (edge case for entering non-color?)
-    // list of shapes (circle, triangle, square - multiple choice DO NOT USE LIST)
-    // shape color (keyword or hexidecimal) (edge case for entering non-color? possibly use jest?)
-
+// create an array of questions for a user to answer
+// answers will be used to create a new svg logo
 const shapeQuestions = [
+    // ask user for text to be used in the logo
     {
         type: 'input',
         message: 'What text characters do you want (up to 3)?',
@@ -24,12 +21,14 @@ const shapeQuestions = [
         }
     },
 
+    // ask user for text color
     {
         type: 'input',
         message: 'What color do you want the text to be?',
         name: 'textColor',
     },
 
+    // ask user for shape to be used in the logo
     {
         type: 'list',
         message: 'What shape do you want for your logo?',
@@ -37,6 +36,7 @@ const shapeQuestions = [
         choices: ['Triangle', 'Circle', 'Square']
     },
 
+    // ask user for shape color
     {
         type: 'input',
         message: 'What color do you want the shape to be?',
@@ -46,12 +46,18 @@ const shapeQuestions = [
 
 // generate logo for the svg file
 function generateLogo({ text, textColor, shape, shapeColor }) {
-    // create new shape class based on user input
+    // create a new variable to hold the blank new shape
     let newShape;
-    if (shape === 'Triangle') {
+
+    // Triangle class
+    if (shape == 'Triangle') {
         newShape = new Triangle(shapeColor, textColor, text);
+
+    // Circle class
     } else if (shape === 'Circle') {
         newShape = new Circle(shapeColor, textColor, text);
+
+    // Square class
     } else if (shape === 'Square') {
         newShape = new Square(shapeColor, textColor, text);
     }
@@ -63,7 +69,7 @@ function generateLogo({ text, textColor, shape, shapeColor }) {
 function init() {
     inquirer.prompt(shapeQuestions)
         .then((response) => {
-            let newLogo = generateLogo(response.text, response.textColor, response.shape, response.shapeColor);
+            let newLogo = generateLogo(response);
             createOutputFile('./examples/customSVGhw.svg', newLogo, (err) => {
                 if (err) {
                     console.log(err);
@@ -75,7 +81,6 @@ function init() {
 }
 
 // write the output file
-
 function createOutputFile(outputName, newLogo) {
     fs.writeFile(outputName, newLogo, (err) => {
         if (err) {
